@@ -54,6 +54,7 @@ const randomColor = (): Closure => {
         const { difference, considerations } = parseOptions(options);
 
         let color: Color;
+        let loopCount = 0;
 
         // do until a dissimilar color is found
         do {
@@ -63,6 +64,10 @@ const randomColor = (): Closure => {
             const b = generateRandom(30, 225);
 
             color = new Color(r, g, b);
+
+            // throw error if color is not found while too many loops
+            if(loopCount > 100) throw new Error('Color generation failed. Possibly, "Difference" and "Considerations" are too big.');
+            loopCount += 1;
 
         } while(checkSimilarity(previousColors, color, difference, considerations));
 
