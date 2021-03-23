@@ -1,5 +1,6 @@
 import Color from './Color';
 import { Options, parseOptions } from './options';
+import { TooManyLoopsError } from './errors';
 
 export type Closure = (options?: Options) => string;
 
@@ -66,7 +67,7 @@ const randomColor = (): Closure => {
             color = new Color(r, g, b);
 
             // throw error if color is not found while too many loops
-            if(loopCount > 100) throw new Error('Color generation failed. Possibly, "Difference" and "Considerations" are too big.');
+            if(loopCount > 100) throw new TooManyLoopsError();
             loopCount += 1;
 
         } while(checkSimilarity(previousColors, color, difference, considerations));
