@@ -51,6 +51,7 @@ Generate 5 random colors
 
 ## Options
 
-* `difference` : Minimum difference from previous colors. If larger, more different colors will be generated. *(optional) (default is 150)* 
-* `considerations` : The number of previous colors to consider. *(optional) (default is 5)*
+* `difference` : Minimum difference from previous colors. If larger, more different colors will be generated. *(optional, number) (default is 150)* 
+* `considerations` : The number of previous colors to consider. *(optional, number) (default is 5)*
 * If `difference` and `considerations` are both too high, it might not be able to generate colors.
+* `brightness` : Choose to generate bright or dark colors. *(optional, boolean)*
