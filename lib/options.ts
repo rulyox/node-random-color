@@ -1,6 +1,4 @@
-const DEFAULT_DIFFERENCE = 150;
-const DEFAULT_CONSIDERATIONS = 5;
-const DEFAULT_BRIGHTNESS = null;
+import { DEFAULT_DIFFERENCE, DEFAULT_CONSIDERATIONS, DEFAULT_BRIGHTNESS } from './constants';
 
 export type Options = {
     difference?: number,
